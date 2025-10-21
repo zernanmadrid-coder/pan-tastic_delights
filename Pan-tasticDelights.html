@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF‑8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pan-tastic Delights</title>
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+      <style>
+    /* Font styling for the Home heading */
+    .home-heading {
+      font-family:'Merienda';
+      font-size: 2.6em;
+      font-weight: bold;
+      line-height: 1.4;
+      color: #5a3b1f; /* Deep brown for contrast */
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    /* Highlight for special words */
+    .gold {
+      font-family: 'Lucida Calligraphy';
+      font-size: 1.6em;
+      color: #966919; /* Rich gold */
+      font-weight: bold;
+    }
+
+
+    /* Base & Colors */
+    :root {
+      --cream: #FFF8F0;
+      --wheat: #F3E1C0;
+      --golden: #E2A76F;
+      --brown: #6B4F3A;
+      --ochre: #CC7722;
+      --cinnamon: #B87333;
+      --bronze: #CD7F32;
+      --fawn: #E5AA70;
+      --golden brown: #966919;
+      --font: 'Quicksand';
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Dancing Script';
+      font-size: 1.0em;
+      font-weight: bold;
+      color: var(--fawn);
+      animation: slideRightLeft 5s linear infinite;
+      white-space: nowrap;
+    }
+
+    @keyframes slideRightLeft {
+      0% { transform: translateX(50%); }
+      50% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+
+    .logo img {
+      width: 75px;
+      height: 75px;
+      border-radius: 50%;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-image: url('3.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      font-family: var(--font); 
+      color: var(--brown); 
+      line-height: 1.6;
+    }
+
+/* Navigation */
+header {
+  background-image: url('3.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 79px;
+  margin-bottom: 0;
+  padding: 38px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-family: 'Lucida Calligraphy';
+  font-size: 1.8em;
+  font-weight: bold;
+  color: var(--ochre);
+}
+
+.logo span {
+  font-size: 1.0em;
+  font-weight: bold;
+  color: var(--brown);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: var(--brown);
+  position: relative;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: var(--fawn);
+  bottom: -5px;
+  left: 0;
+  transition: width 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* 🛒 Cart Icon Styling */
+.cart-icon i {
+  font-size: 1.3em;
+  color: var(--ochre);
+  transition: color 0.3s, transform 0.3s;
+}
+
+.cart-icon i:hover {
+  color: var(--fawn);
+  transform: scale(1.2);
+}
+
+
+
+    /* Section Titles */
+    .section { padding: 60px 20px; text-align: center; }
+    .section h2 { font-size: 2.5em; color: var(--brown); margin-bottom: 20px; font-family: 'Merienda'; }
+    .section h2 span { font-size: 1.7em; color: var(--golden); font-family: 'Dancing Script'; }
+
+    /* Home */
+    #home {
+      background-image: url('1.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding:90px;
+      margin-bottom: 50px;
+    }
+    
+    #home img {
+      width: 450px;
+      height: 300px;
+      border-radius: 70%;
+    }
+
+    #home .hero-text {
+      flex: 1 1 300px;
+      background: rgba(0,0,0,0.0);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    #home .hero-text h1 { font-size: 3.0em; line-height: 1.4; }
+    #home .hero-text h1 span { color: var(--ochre); }
+    #home .hero-text p { margin: 20px 0; font-size: 1.7em; font-weight: bold; color: var(--brown); }
+    .btn { background: var(--golden); color: white; padding: 15px 30px; font-size: 1.5em; border: none; cursor: pointer; border-radius: 50px; transition: background 0.3s; }
+    .btn:hover { background: var(--brown); }
+
+    /* About */
+    #about .section { padding: 60px 20px; text-align: center; margin-top: 150px; }
+    #about .about-content { max-width: 1000px; margin: 0 auto; font-size: 1.3em; font-weight: bold; line-height: 1.5;}
+    #about img {
+      width: 400px;
+      height: 250px;
+      border-radius: 70%;
+    }
+   
+    /* Menu */
+    .menu-item .btn { background: var(--golden); color: white; padding: 5px 10px; font-size: 1.0em; border: none; cursor: pointer; border-radius: 50px; transition: background 0.3s; }
+    .menu-container, .review-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+    .menu-item { background: var(--cream); border-radius: 20px; overflow: hidden; width: 180px; height: 320px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s; cursor: pointer; }
+    .menu-item:hover { transform: scale(1.05); }
+    .menu-item img { width: 100%; height: 130px; object-fit: cover; }
+    .menu-item h2 { margin: 10px 0; font-size: 1.1em; margin-bottom: 2px 0;}
+    .menu-item p { padding: 0 10px 10px; font-size: 0.9em; }
+    .menu-item .price { font-weight: bold; display: block; margin-bottom: 10px; }
+.menu-item .btn {
+  background: var(--golden);
+  color: white;
+  padding: 5px 12px;
+  font-size: 1em;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: background 0.3s;
+}
+
+.menu-item .btn:hover {
+  background: var(--brown);
+}
+
+/* Container for buttons */
+.menu-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+/* Cart button styling */
+.menu-item .cart-btn {
+  background: var(--wheat);
+  color: var(--brown);
+  padding: 6px 10px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background 0.3s;
+}
+
+.menu-item .cart-btn:hover {
+  background: var(--golden);
+  color: white;
+}
+
+
+
+    /* Gallery */
+    .gallery-item .btn { background: var(--golden); color: white; padding: 5px 10px; font-size: 1.0em; border: none; cursor: pointer; border-radius: 50px; transition: background 0.3s; }
+    .gallery-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 20px; }
+    .gallery-item { position: relative; border-radius: 10px; overflow: hidden; cursor: pointer; }
+    .gallery-item { background: var(--cream); }
+    .gallery-item img { width: 100%; height: 130px; display: block; object-fit: cover; transition: transform 0.3s; }
+    .gallery-item:hover img { transform: scale(1.1); }
+    .gallery-desc { position: absolute; bottom: 0; background: rgba(0,0,0,0.7); color: white; width: 100%; padding: 10px; font-size: 0.9em; opacity: 0; transition: opacity 0.3s; }
+    .gallery-item .price { font-weight: bold; display: block; margin-bottom: 10px; }
+    .gallery-item:hover .gallery-desc { opacity: 1; }
+.gallery-item .btn {
+  background: var(--golden);
+  color: white;
+  padding: 5px 12px;
+  font-size: 1em;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: background 0.3s;
+}
+
+.gallery-item .btn:hover {
+  background: var(--brown);
+}
+
+/* Container for buttons */
+.gallery-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+/* Cart button styling */
+.gallery-item .cart-btn {
+  background: var(--wheat);
+  color: var(--brown);
+  padding: 6px 10px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background 0.3s;
+}
+
+.gallery-item .cart-btn:hover {
+  background: var(--golden);
+  color: white;
+}
+
+    /* Reviews */
+    .review-item { background: var(--cream); border-radius: 30px; width: 275px; height: 380px; padding: 20px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s; }
+    .review-item:hover { transform: scale(1.1); }
+    .review-item img { width: 225px; height: 260px; border-radius: 10%; margin-bottom:30px; }
+    .review-item h3 { margin: 0px 0; }
+    .review-item p { font-size: 0.9em; }
+
+    /* Order Form */
+    #order form { max-width: 400px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; }
+    #order input, #order textarea { padding: 12px; border: 1px solid #ccc; border-radius: 10px; font-size: 1em; }
+    #order button { padding: 15px; background: var(--golden); color: white; font-size: 1.1em; border: none; border-radius: 25px; cursor: pointer; transition: background 0.3s; }
+    #order button:hover { background: var(--brown); }
+
+
+    /*Team*/
+    #team { margin-top: 30px; margin-bottom: 150px; }
+    .team-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+    .team-item { position: relative; border-radius: 30px; overflow: hidden; cursor: pointer; }
+    .team-item { background: var(--cream); height: 350px; width: 190px; }
+    .team-item img { width: 190px; height: 200px; weight: 190px; display: block; object-fit: cover;transition: transform 0.3s; border-radius: 0px; }
+    .team-item:hover img { transform: scale(1.1); }
+    .team-desc { position: absolute; bottom: 0; background: rgba(0,0,0,0.7); color: cream; width: 500px; padding: 100px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1); font-size: 0.9em; opacity: 8; transition: transform 0.3s;  }
+    .team-item .price { font-weight: bold; display: block; margin-bottom: 10px; }
+    .team-item:hover .gallery-desc { opacity: 1; }
+    .team-item p { margin-top: 0px; margin-bottom: 0px; font-size: 1.0em; font-weight: bold; color: var(--brown) }
+    .team-item h2 { margin-top: 1px; margin-bottom: 0px; font-size: 1.2em; font-weight: bold; color: var(--brown) }
+
+   .team-item h3 { margin-top: 10px; margin-bottom: 5px; font-size: 1.3em; font-weight: bold; color: white }
+  
+    /* Contact */
+    #contact {
+      background: var(--cream);
+      padding: 50px;
+      font-size: 0.9em;
+      width: 100%;
+      height:350px;
+      margin-top: 150px;
+      margin-bottom: 30px;
+      margin: 0px;
+    }
+
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: none;
+      color: var(--brown);
+      margin-top: 50px;
+      font-weight: bold;
+    }
+  
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 10;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .modal-content {
+      background: #fffaf4;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      max-width: 350px;
+      animation: popIn 0.4s ease;
+    }
+
+    @keyframes popIn {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .modal-content h3 {
+      color: #d35400;
+      margin-bottom: 10px;
+    }
+
+    .modal-content p {
+      font-size: 16px;
+      color: #333;
+    }
+
+    .close-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #f4b183;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 15px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .close-btn:hover {
+      background: #e59866;
+    }
+
+/* Toast message style */
+.toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #6B4F3A;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1em;
+  opacity: 0;
+  transition: opacity 0.4s, transform 0.4s;
+  transform: translateY(20px);
+  z-index: 9999;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+  
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Logo">
+      <logo>Pan-tastic<span>Delights</span></logo>
+    </div>
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#review">Review</a></li>
+      <li><a href="#order">Order</a></li>
+      <li><a href="#team">Our Team</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+      <li><a href="cart.html">Cart</a></li>
+      <li>
+    </ul>
+  </nav>
+</header>
+
+  
+  <section id="home" class="section">
+    <div class="hero-text">
+      <h1 class="home-heading">
+        Every bite is a <br><span class="gold">pan-tastic</span> surprise. <br>
+      </h1>
+      <p>
+        Craving comfort? Treat yourself to the softest, freshest, most pan-tastic breads in town, baked daily to delight your taste buds.
+      </p>
+      <button class="btn" onclick="location.href='#order'">Order Now</button>
+    </div>
+    <div>
+    <img src="home.png">
+  </div>
+  </section>
+
+  <section id="about" class="section">
+    <h2>About <span>Us</span></h2>
+    <div class="about-content">
+      <p> Pan-tastic Delights began as a humble kitchen dream in 2021, when we decided to turn our love for Filipino breads into something more. Something that could be shared with the whole community. With a rolling pin, a few family recipes, and a big heart, our bakeshop was born.
+          <br>
+          
+          <br>
+          Our purpose is simple: to bring joy through fresh, delicious, and authentic Pinoy breads and pastries. We aim to revive the taste of tradition while adding a modern twist, using only the finest ingredients and baking everything with care—just like how it’s done at home.
+          <br>
+          
+          <br>
+          Today, Pan-tastic Delights continues to grow, but our heart remains the same. Every bun we knead and every pastry we glaze carries the same warmth and passion we started with. Whether you’re here for breakfast, merienda, or pasalubong, we’re honored to be a part of your everyday moments.
+      </p>
+    </div>
+    <div>
+    <img src="about.png"
+  </div>
+  </section>
+
+  <section id="menu" class="section">
+    <h2>Our <span>Menu</span></h2>
+    <p style="font-size:1.7em; color:#6B4F3A; margin-bottom: 1.5px; margin-top: 2px;">₱/each</p>
+    <div class="menu-container">
+      <div class="menu-item">
+        <img src="4.jpg" alt="Pandesal">
+        <h3>Pandesal</h3>
+        <p>Soft roll perfect with coffee.</p>
+        <span class="price">₱3</span>
+        <div class="menu-buttons">
+          <button class="btn" onclick="location.href='#order'">Order</button>
+          <button class="cart-btn" onclick="addToCart('Pandesal', 3, '4.jpg')">Add to Cart</button>
+          </button>
+        </div>
+      </div>
+      <div class="menu-item">
+        <img src="5.png" alt="Ensaymada">
+        <h3>Ensaymada</h3>
+        <p>Brioche topped with cheese.</p>
+        <span class="price">₱5</span>
+        <div class="menu-buttons">
+          <button class="btn" onclick="location.href='#order'">Order</button>
+          <button class="cart-btn" onclick="addToCart('Ensaymada', 5, '5.png')">Add to Cart</button>
+        </div>
+      </div>
+      <div class="menu-item">
+        <img src="6.jpg" alt="Spanish Bread">
+        <h3>Spanish Bread</h3>
+        <p>Sweet buttery crumbs inside.</p>
+        <span class="price">₱10</span>
+        <div class="menu-buttons">
+          <button class="btn" onclick="location.href='#order'">Order</button>
+          <button class="cart-btn" onclick="addToCart('Spanish Bread', 10, '6.jpg')">Add to Cart</button>
+          </button>
+        </div>
+      </div>
+      <div class="menu-item">
+        <img src="7.jpg" alt="Monay">
+        <h3>Monay</h3>
+        <p>Course-textured classic bread.</p>
+        <span class="price">₱5</span>
+        <div class="menu-buttons">
+          <button class="btn" onclick="location.href='#order'">Order</button>
+          <button class="cart-btn" onclick="addToCart('Monay', 5, '7.jpg')">Add to Cart</button>
+          </button>
+        </div>
+      </div>
+      <div class="menu-item">
+        <img src="8.jpg" alt="Pan de Coco">
+        <h3>Pan de Coco</h3>
+        <p>Coconut-filled delight bread.</p>
+        <span class="price">₱5</span>
+        <div class="menu-buttons">
+          <button class="btn" onclick="location.href='#order'">Order</button>
+          <button class="cart-btn" onclick="addToCart('Pan de coco', 5, '8.jpg')">Add to Cart</button>
+          </button>
+        </div>
+      </div>
+      <div class="menu-item">
+        <img src="9.png" alt="Kalihim">
+        <h3>Kalihim</h3>
+        <p>Red bean crumbs hidden.</p>
+        <span class="price">₱3</span>
+      <div class="menu-buttons">
+        <button class="btn" onclick="location.href='#order'">Order</button>
+          <button class="cart-btn" onclick="addToCart('Kalihim', 3, '9.png')">Add to Cart</button>
+          </button>
+      </div>
+      </div>
+      <div class="menu-item">
+        <img src="10.jpg" alt="Putok">
+        <h3>Putok</h3>
+        <p>Cracked top, crunchy crust.</p>
+        <span class="price">₱5</span>
+        <div class="menu-buttons">
+          <button class="btn" onclick="location.href='#order'">Order</button>
+          <button class="cart-btn" onclick="addToCart('Putok', 5, '10.jpg')">Add to Cart</button>
+          </button>
+        </div>
+      </div>
+      <div class="menu-item">
+        <img src="11.jpg" alt="Ube Pandesal">
+        <h3>Ube Pandesal</h3>
+        <p>Purple pandesal with cheese.</p>
+        <span class="price">₱5</span>
+        <div class="menu-buttons">
+          <button class="btn" onclick="location.href='#order'">Order</button>
+          <button class="cart-btn" onclick="addToCart('Ube Pandesal', 5, '11.jpg')">Add to Cart</button>
+          </button>
+        </div>
+      </div>
+      <div class="menu-item">
+        <img src="12.jpg" alt="Cheese Roll">
+        <h3>Cheese Roll</h3>
+        <p>Warm cheesy center bread.</p>
+        <span class="price">₱10</span>
+        <div class="menu-buttons">
+          <button class="btn" onclick="location.href='#order'">Order</button>
+          <button class="cart-btn" onclick="addToCart('Cheese Roll', 10, '12.jpg')">Add to Cart</button>
+          </button>
+        </div>
+      </div>
+      <div class="menu-item">
+        <img src="13.jpg" alt="Crinkles">
+        <h3>Crinkles</h3>
+        <p>Fudgy cookies coated in powdered sugar.</p>
+        <span class="price">₱5</span>
+        <div class="menu-buttons">
+          <button class="btn" onclick="location.href='#order'">Order</button>
+          <button class="cart-btn" onclick="addToCart('Crinkles', 5, '13.jpg')">Add to Cart</button>
+          </button>
+        </div>
+      </div>
+      <div class="menu-item">
+        <img src="14.jpg" alt="Pianono">
+        <h3>Pianono</h3>
+        <p>Rolled sponge cake with sweet filling.</p>
+        <span class="price">₱5</span>
+        <div class="menu-buttons">
+          <button class="btn" onclick="location.href='#order'">Order</button>
+          <button class="cart-btn" onclick="addToCart('Pianono', 5, '14.jpg')">Add to Cart</button>
+          </button>
+        </div>
+      </div>
+      <div class="menu-item">
+        <img src="15.jpg" alt="Ube Hopia">
+        <h3>Ube Hopia</h3>
+        <p>Flaky pastry with sweet ube filling.</p>
+        <span class="price">₱3</span>
+        <div class="menu-buttons">
+          <button class="btn" onclick="location.href='#order'">Order</button>
+          <button class="cart-btn" onclick="addToCart('Ube Hopia', 3, '15.jpg')">Add to Cart</button>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section id="gallery" class="section">
+    <h2>Our <span>Gallery</span></h2>
+    <p style="font-size:1.4em; color:#6B4F3A; margin-bottom: 1.5px; margin-top: 2px;">Hold to see the name and price</p>
+    <p style="font-size:1.6em; color:#6B4F3A; margin-bottom: 1.5px; margin-top: 10px;">₱/each</p>
+      
+    <!-- FESTIVAL FAVORITES -->
+    <center><h2 style="color:#966919;">Festival Favorites</h2></center>
+    <div class="gallery-container" style="margin-top: 20px;">
+      <div class="gallery-item"><img src="mamon.jpg" alt="Mamon"><div class="gallery-desc">Mamon<br><span class="price">₱35</span><div class="menu-buttons"><button class="btn" onclick="location.href='#order'">Order</button><button class="cart-btn" onclick="addToCart('Mamon', 35, 'mamon.jpg')">Add to Cart</button></div></div></div>
+      <div class="gallery-item"><img src="puto.jpg" alt="Puto"><div class="gallery-desc">Puto<br><span class="price">₱5</span><div class="menu-buttons"><button class="btn" onclick="location.href='#order'">Order</button><button class="cart-btn" onclick="addToCart('Puto', 5, 'puto.jpg')">Add to Cart</button></div></div></div>
+      <div class="gallery-item"><img src="kutsinta.jpg" alt="Kutsinta"><div class="gallery-desc">Kutsinta<br><span class="price">₱5</span><div class="menu-buttons"><button class="btn" onclick="location.href='#order'">Order</button><button class="cart-btn" onclick="addToCart('Kutsinta', 5, 'kutsinta.jpg')">Add to Cart</button></div></div></div>
+      <div class="gallery-item"><img src="bibingka.jpg" alt="Bibingka"><div class="gallery-desc">Bibingka<br><span class="price">₱15</span><div class="menu-buttons"><button class="btn" onclick="location.href='#order'">Order</button><button class="cart-btn" onclick="addToCart('Bibingka', 15, 'bibingka.jpg')">Add to Cart</button></div></div></div>
+      <div class="gallery-item"><img src="ubehalaya.jpg" alt="Ube Halaya"><div class="gallery-desc">Ube Halaya<br><span class="price">₱15</span><div class="menu-buttons"><button class="btn" onclick="location.href='#order'">Order</button><button class="cart-btn" onclick="addToCart('Ube Halaya', 15, 'ubehalaya.jpg')">Add to Cart</button></i></div></div></div>
+      <div class="gallery-item"><img src="broas.jpg" alt="Broas"><div class="gallery-desc">Broas<br><span class="price">₱5</span><div class="menu-buttons"><button class="btn" onclick="location.href='#order'">Order</button><button class="cart-btn" onclick="addToCart('Broas', 5, 'broas.jpg')">Add to Cart</button></div></div></div>      
+    </div>
+
+    <br><br>
+
+    <!-- REGIONAL SPECIALTIES -->
+    <center><h2 style="color:#966919;">Regional Specialties</h2></center>
+    <div class="gallery-container" style="margin-top: 20px;">
+      <div class="gallery-item"><img src="Inipit.jpg" alt="Inipit"><div class="gallery-desc">Inipit (Bulacan)<br><span class="price">₱5</span><div class="menu-buttons"><button class="btn" onclick="location.href='#order'">Order</button><button class="cart-btn" onclick="addToCart('Inipit', 5, 'Inipit.jpg')">Add to Cart</button></i></div></div></div>
+      <div class="gallery-item"><img src="torta.jpg" alt="Torta Cebuana"><div class="gallery-desc">Torta Cebuana (Cebu)<br><span class="price">₱10</span><div class="menu-buttons"><button class="btn" onclick="location.href='#order'">Order</button><button class="cart-btn" onclick="addToCart('Torta Cebuana', 10, 'torta.jpg')">Add to Cart</button></div></div></div>
+      <div class="gallery-item"><img src="binangkal.jpg" alt="Binangkal"><div class="gallery-desc">Binangkal (Visayas)<br><span class="price">₱5</span><div class="menu-buttons"><button class="btn" onclick="location.href='#order'">Order</button><button class="cart-btn" onclick="addToCart('Binangkal', 5, 'binangkal.jpg')">Add to Cart</button></i></div></div></div>
+      <div class="gallery-item"><img src="otap.jpg" alt="Otap"><div class="gallery-desc">Otap (Cebu)<br><span class="price">₱5</span><div class="menu-buttons"><button class="btn" onclick="location.href='#order'">Order</button><button class="cart-btn" onclick="addToCart('Otap', 5, 'otap.jpg')">Add to Cart</button></div></div></div>
+      <div class="gallery-item"><img src="pastel.jpg" alt="Pastel"><div class="gallery-desc">Pastel (Camiguin)<br><span class="price">₱5</span><div class="menu-buttons"><button class="btn" onclick="location.href='#order'">Order</button><button class="cart-btn" onclick="addToCart('Pastel', 5, 'pastel.jpg')">Add to Cart</button></div></div></div>
+      <div class="gallery-item"><img src="biscocho.jpg" alt="Biscocho"><div class="gallery-desc">Biscocho (Iloilo)<br><span class="price">₱5</span><div class="menu-buttons"><button class="btn" onclick="location.href='#order'">Order</button><button class="cart-btn" onclick="addToCart('Biscocho', 5, 'biscocho.jpg')">Add to Cart</button></div></div></div>
+    </div>
+  </section>
+
+  <section id="review" class="section">
+    <h2>Customer <span>Reviews</span></h2>
+
+    <div class="review-container">
+      <div class="review-item">
+        <a href="joana.html">
+          <img src="joana.jpg" alt="Joana" />
+        </a>
+        <h3>Joana Aquindo<br>⭐⭐⭐⭐⭐</h3>
+      </div>
+      
+      <div class="review-item">
+        <a href="rahmiah.html">
+          <img src="rahmiah.jpg" alt="Rahmiah" />
+        </a>
+        <h3>Rahmiah Roa<br>⭐⭐⭐⭐⭐</h3>
+      </div>
+
+      <div class="review-item">
+        <a href="jana.html">
+          <img src="jana.jpg" alt="Jana" />
+        </a>
+        <h3>Jana Amoncio<br>⭐⭐⭐⭐⭐</h3>
+      </div>
+    </div>
+  </section>
+
+  <section id="order" class="section">
+    <h2>Order <span>Now</span></h2>
+    <form id="orderForm">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <input type="text" placeholder="Phone Number" required>
+      <textarea placeholder="Quantity" rows="2" required></textarea>
+      <textarea placeholder="Delivery Address" rows="2" required></textarea>
+      <button type="submit">Submit Order</button>
+    </form>
+  </section>
+    
+    <!-- Custom Modal -->
+  <div class="modal" id="thankYouModal">
+    <div class="modal-content">
+      <h3>🎉 Order Submitted!</h3>
+      <p>Thank you for ordering from <b>Pan-tastic Delights</b>!<br>
+      We’ll contact you soon for delivery details.</p>
+      <button class="close-btn" id="closeModal">OK</button>
+    </div>
+  </div>
+
+
+<section id="team" class="section">
+  <h2>Our <span>Team</span></h2>
+  <div class="team-container">
+    
+    <!-- Team Member 1 -->
+    <div class="team-item">
+      <img src="zernan.jpg" alt="Zernan">
+      <h2>Zernan Madrid</h2><br><p>Owner<br>09923926439<br>madridzernan@gmail.com</p>
+    </div>
+
+    <!-- Team Member 2 -->
+    <div class="team-item">
+      <img src="tyriel.jpeg" alt="Tyriel">
+      <h2>Tyriel Colonia</h2><br><p>Head Baker<br>09923926439<br>tyriel@gmail.com</p>
+    </div>
+
+    <!-- Team Member 3 -->
+    <div class="team-item">
+      <img src="joana.jpg" alt="Joana">
+      <h2>Joana Aquindo</h2><br><p>Baker<br>09923926439<br>joana@gmail.com</p>
+    </div>
+
+    <!-- Team Member 4 -->
+    <div class="team-item">
+      <img src="princess.jpeg" alt="Guia">
+      <h2>Princess Payla</h2><br><p>Assistant Baker<br>09923926439<br>pricesspayla@gmail.com</p>
+    </div>
+
+    <!-- Team Member 5 -->
+    <div class="team-item">
+      <img src="jessel.jpeg" alt="Jessel">
+      <h2>Jessel Calaganda</h2><br><p>Kitchen Staff<br>09923926439<br>jessel@gmail.com</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- TEAM MODALS WITH PHOTOS -->
+<div class="modal" id="zernanModal">
+  <div class="modal-content">
+    <img src="zernan.jpg" alt="Zernan" class="modal-img">
+    <h3>Zernan Madrid</h3>
+    <p><b>Position:</b> Owner<br>
+       <b>Phone:</b> 09923926439<br>
+       <b>Email:</b> madridzernan@gmail.com</p>
+    <button class="close-btn" onclick="closeTeamModal('zernanModal')">Close</button>
+  </div>
+</div>
+
+<div class="modal" id="tyrielModal">
+  <div class="modal-content">
+    <img src="tyriel.jpeg" alt="Tyriel" class="modal-img">
+    <h3>Tyriel Colonia</h3>
+    <p><b>Position:</b> Head Baker<br>
+       <b>Phone:</b> 09367890879<br>
+       <b>Email:</b> tyrielcolonia@gmail.com</p>
+    <button class="close-btn" onclick="closeTeamModal('tyrielModal')">Close</button>
+  </div>
+</div>
+
+<div class="modal" id="joanaModal">
+  <div class="modal-content">
+    <img src="joana.jpg" alt="Joana" class="modal-img">
+    <h3>Joana Aquindo</h3>
+    <p><b>Position:</b> Baker<br>
+       <b>Phone:</b> 09652480977<br>
+       <b>Email:</b> joanaaquindo@gmail.com</p>
+    <button class="close-btn" onclick="closeTeamModal('joanaModal')">Close</button>
+  </div>
+</div>
+
+<div class="modal" id="guiaModal">
+  <div class="modal-content">
+    <img src="princess.jpeg" alt="Guia" class="modal-img">
+    <h3>Princess Guia Payla</h3>
+    <p><b>Position:</b> Assistant Baker<br>
+       <b>Phone:</b> 09679530908<br>
+       <b>Email:</b> princesspayla@gmail.com</p>
+    <button class="close-btn" onclick="closeTeamModal('guiaModal')">Close</button>
+  </div>
+</div>
+
+<div class="modal" id="jesselModal">
+  <div class="modal-content">
+    <img src="jessel.jpeg" alt="Jessel" class="modal-img">
+    <h3>Jessel Calaganda</h3>
+    <p><b>Position:</b> Kitchen Staff<br>
+       <b>Phone:</b> 09652480977<br>
+       <b>Email:</b> jesselcalaganda@gmail.com</p>
+    <button class="close-btn" onclick="closeTeamModal('jesselModal')">Close</button>
+  </div>
+</div>
+
+<style>
+  /* Modal image styling */
+  .modal-img {
+    width: 135px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 3px solid #d4a373;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .modal-content h3 {
+    color: #6B4F3A;
+    margin-top: 10px;
+  }
+
+  .modal-content p {
+    color: #6B4F3A;
+    font-weight: bold;
+    line-height: 1.6;
+  }
+
+  .close-btn {
+    margin-top: 15px;
+    padding: 8px 18px;
+    background-color: #d4a373;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .close-btn:hover {
+    background-color: #b07c57;
+  }
+</style>
+
+
+  <section id="contact" class="section">
+   <h2>Contact <span>Us</span></h2>
+   <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 60px; margin-top: 20px;">
+    <div style="text-allign: center; flex: 1 1 200px;">
+      <h3>📍 Location</h3><p>Cabulohan, Cabanglasan, Bukidnon</p>
+    </div>
+    <div style="text-allign: center; flex: 1 1 200px;">
+      <h3>📞 Phone</h3><p>09923456789<br>or<br>09335982415</p>
+    </div>
+    <div style="text-allign: center; flex: 1 1 200px;">
+      <h3>📧 Email</h3><p>pan-tasticdelights@gmail.com<br>or<br>pandelights@gmail.com</p>
+    </div>
+   </div>
+  </section>
+
+  <footer>
+    © 2025 Pan-tastic Delights. All rights reserved.
+  </footer>
+
+  <script>
+    const form = document.getElementById('orderForm');
+    const modal = document.getElementById('thankYouModal');
+    const closeModal = document.getElementById('closeModal');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); // prevent page refresh
+      modal.style.display = 'flex'; // show modal
+      form.reset(); // clear form
+    });
+
+    closeModal.addEventListener('click', function() {
+      modal.style.display = 'none'; // close modal
+    });
+
+    // close modal by clicking outside
+    window.addEventListener('click', function(event) {
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+  </script>
+      
+  <script>
+  // FUNCTIONS FOR TEAM MODALS
+  function openTeamModal(id) {
+    document.getElementById(id).style.display = 'flex';
+  }
+
+  function closeTeamModal(id) {
+    document.getElementById(id).style.display = 'none';
+  }
+
+  // Close modal when clicking outside
+  window.addEventListener('click', function(e) {
+    document.querySelectorAll('.modal').forEach(modal => {
+      if (e.target === modal) modal.style.display = 'none';
+    });
+  });
+</script>
+  
+<script>
+  // Add to cart function
+  function addToCart(name, price, image) {
+    // Get existing cart data or initialize an empty array
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // Check if the item is already in the cart
+    let existingItem = cart.find(item => item.name === name);
+    if (existingItem) {
+      existingItem.quantity += 1; // increase quantity
+    } else {
+      // Add new item
+      cart.push({ name: name, price: price, image: image, quantity: 1 });
+    }
+
+    // Save updated cart
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    // Optional: show a small alert or toast message
+    alert(name + " added to cart!");
+  }
+
+function addToCart(name, price, image) {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  cart.push({ name, price, image });
+  localStorage.setItem('cart', JSON.stringify(cart));
+
+  // Show toast message
+  showToast(`${name} added to cart 🛒`);
+}
+
+function showToast(message) {
+  const toast = document.getElementById('toast');
+  toast.textContent = message;
+  toast.classList.add('show');
+
+  // Hide after 3 seconds
+  setTimeout(() => {
+    toast.classList.remove('show');
+  }, 3000);
+}
+
+</script>
+
+<!-- Toast notification -->
+<div id="toast" class="toast"></div>
+
+
+</body>
+</html>
